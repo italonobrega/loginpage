@@ -6,46 +6,49 @@ import { AuthContext } from "../../context/auth";
 
 import "./styles.css";
 
+
 const LoginPage = () => {
   const { authenticated, login } = useContext(AuthContext);
 
-  const [email, setEmail] = useState("");
+  const [matricula, setmatricula] = useState("");
   const [password, setPassword] = useState("");
 
   const handleSubmit = (e) =>{
     e.preventDefault();
-    console.log("submit", { email, password });
-    login(email, password); // integração com o contexto e api
+    console.log("submit", { matricula, password });
+    login(matricula, password); // integração com o contexto e api
   }
   return (
     <div id="login">
-      <h1 className="title">Chatbot UNICAP</h1>
-      <p>{String(authenticated)}</p>
-      <form className="form" onSubmit={handleSubmit}>
-        <div className="field">
-          <label htmlFor="email">Email</label>
-          <input 
-            type="email" 
-            name="email" 
-            id="email" 
-            value={email} 
-            onChange={(e) => setEmail(e.target.value)}
+      <div id="login-area">
+        <h1 className="title">Chatbot UNICAP</h1>
+        <p>{String(authenticated)}</p>
+        <form className="form" onSubmit={handleSubmit}>
+          <div className="field">
+            <label htmlFor="matricula">Matricula</label>
+            <input 
+              type="text" 
+              name="matricula" 
+              id="matricula" 
+              value={matricula} 
+              onChange={(e) => setmatricula(e.target.value)}
+            />
+          </div>
+          <div className="field">
+            <label htmlFor="password">Senha</label>
+            <input
+            type="password" 
+            name="password" 
+            id="password" 
+            value={password} 
+            onChange={(e) => setPassword(e.target.value)}
           />
-        </div>
-        <div className="field">
-          <label htmlFor="password">Senha</label>
-          <input
-          type="password" 
-          name="password" 
-          id="password" 
-          value={password} 
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        </div>
-        <div className="actions">
-          <button type="submit">Entrar</button>
-        </div>
-      </form>
+          </div>
+          <div className="actions">
+            <button type="submit">Acessar</button>
+          </div>
+        </form>
+      </div>
     </div>
   )
 }

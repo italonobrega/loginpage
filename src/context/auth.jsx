@@ -24,13 +24,13 @@ export const AuthProvider = ({ children }) => {
     setLoading(false);
   }, []);
 
-  const login = (email, password) => {    
-    console.log("login auth", { email, password });
+  const login = (matricula, password) => {    
+    console.log("login auth", { matricula, password });
   // ir na api e criar uma session    
 
     const loggedUser = {
       id: "123",
-      email,
+      matricula,
     }
 
     localStorage.setItem("user", JSON.stringify(loggedUser));
