@@ -26,6 +26,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = (email, password) => {    
     console.log("login auth", { email, password });
+  // ir na api e criar uma session    
 
     const loggedUser = {
       id: "123",
@@ -33,6 +34,8 @@ export const AuthProvider = ({ children }) => {
     }
 
     localStorage.setItem("user", JSON.stringify(loggedUser));
+    //localStorage - grava somente Strings, só tipos nativos
+    //JSON.stringify - transforma parametro em string
 
     if (password === "secret"){
       setUser(loggedUser);

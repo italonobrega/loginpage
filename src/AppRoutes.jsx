@@ -15,7 +15,7 @@ import HomePage from "./pages/HomePage";
 import { AuthProvider, AuthContext } from "./context/auth";
 //authProvider = prover o authContext
 const AppRoutes = () => {
-  const Private = ({children}) =>{
+  const Private = ({ children }) =>{
     const{ authenticated, loading } = useContext(AuthContext);
 
     if(loading){
@@ -42,6 +42,7 @@ const AppRoutes = () => {
               <Private>
                 <HomePage/>
               </Private>
+              //private - rota de coveniencia, caso não eseja autenticado, va para a pagina de login,nao garante segurança 100%. só garante segurança o back exigindo o token
             } 
           />
         </Routes>
