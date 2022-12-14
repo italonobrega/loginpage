@@ -1,8 +1,13 @@
-import React, { useState, useEffect, createContext} from "react";
+import React, { useState, useEffect, createContext } from "react";
+//useState - Retorna um valor e uma função para atualizar o valor.
+//useEffect - Aceita uma função que contém um código imperativo, possivelmente efetivo.
+//createContext - cria um objeto context
 
 import { useNavigate } from "react-router-dom";
+//useNavigate - retorna uma função que permite navegar programaticamente.
 
 export const AuthContext = createContext ();
+//autenticação
 
 export const AuthProvider = ({ children }) => {
   const navigate = useNavigate();

@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+//useContext - Aceita um objeto de contexto (o valor retornado de React.createContext) e retorna o valor atual do contexto.
 
 import {
  BrowserRouter as Router,
@@ -6,6 +7,7 @@ import {
  Routes,
  Navigate,
 } from "react-router-dom";
+//router
 
 import LoginPage from "./pages/LoginPage";
 import HomePage from "./pages/HomePage";

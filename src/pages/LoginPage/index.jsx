@@ -1,4 +1,6 @@
 import React, { useState, useContext } from "react";
+//useState - Retorna um valor e uma função para atualizar o valor.
+//useContext - Aceita um objeto de contexto (o valor retornado de React.createContext) e retorna o valor atual do contexto.
 
 import { AuthContext } from "../../context/auth";
 
